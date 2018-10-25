@@ -1,0 +1,159 @@
+label {
+    font-weight: bold;
+}
+
+.disabled-input {
+    cursor: default;
+    border: none;
+    color: inherit;
+    padding: 0;
+    transition: 0.5s ease-in;
+    pointer-events: none;
+}
+
+.enabled-input {
+    padding: 5px;
+    cursor: text;
+    transition: 0.5s ease-in;
+}
+
+.container {
+    margin: 0 25px;
+}
+
+.form-group {
+    margin: 15px 0;
+}
+
+:host {
+    display: block;
+}
+
+.open-close-container {
+    border: 1px solid #dddddd;
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+button {
+    margin: 5px;
+}
+
+
+.say-toggle-bar {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-top: 2px solid lightgray;
+    border-left: 2px solid lightgray;
+}
+
+.say-toggle__label {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    border-right: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
+    position: relative;
+}
+
+.say-toggle__label:hover {
+    background-color: magenta;
+    color: white;
+    cursor: pointer;
+}
+
+.say-toggle__item {
+    display: none;
+}
+
+.say-toggle__item:checked+.say-toggle__label {
+    background-color: magenta;
+    color: white;
+}
+
+.say-toggle__text--default {
+    display: block;
+}
+
+.say-toggle__text--loading {
+    opacity: 0;
+    position: absolute;
+    top: 15px; 
+    left: calc(50% - 11.55px);
+}
+
+.say-toggle__text--temp {
+    opacity: 0;
+    position: absolute;
+    top: 15px; 
+    left: calc(50% - 22.7px);
+}
+
+/*on the check event -- js add the selected modifier*/
+.say-toggle__label--selected > .say-toggle__text--default {
+    transition: opacity .5s ease;
+    opacity: 0;
+}
+
+.say-toggle__label--selected > .say-toggle__text--loading {
+    transition: opacity 1s ease;
+    opacity: 1;
+}
+
+/*on the uncheck event -- js add the unselected modifier*/
+.say-toggle__label--unselected > .say-toggle__text--default {
+    transition: opacity .5s ease;
+    opacity: 0;
+}
+
+.say-toggle__label--unselected > .say-toggle__text--loading {
+    transition: opacity 1s ease;
+    opacity: 1;
+}
+
+/*on the class being added back event - should happen when js callsback or promise returns etc.*/
+.say-toggle__label--confirmed > .say-toggle__text--temp {
+    animation: fade-in-out 2.5s ease;
+    animation-delay: .5s;
+}
+
+.say-toggle__label--confirmed > .say-toggle__text--default {
+    transition: opacity 1s ease;
+    transition-delay: 2.5s;
+    opacity: 1;
+}
+
+.say-toggle__label--confirmed > .say-toggle__text--loading {
+    transition: opacity 1s ease;
+    opacity: 0;
+}
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 0;
+    }
+
+    25%, 75% {
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes fade-out-in {
+    0% {
+        opacity: 1;
+    }
+
+    25%, 75% {
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}

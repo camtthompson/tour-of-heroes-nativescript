@@ -1,0 +1,58 @@
+.say-header {
+    background-color: magenta;
+}
+
+.say-list {
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+    padding-inline-start: 0;
+    padding-inline-start: 225px;
+}
+
+.say-header--main>.say-list {
+    height: 60px;
+    padding-left: 0;
+}
+
+.say-list-item {
+    padding: 15px;
+}
+
+.say-list-item--right {
+    margin-left: auto;
+}
+
+.say-list-item--logo {
+    top: -20px;
+    left: -25px;
+    position: relative;
+}
+
+.say-sub-header {
+    background-color: purple;
+}
+
+a {
+    color: white;
+}
+
+.som{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .som {
+        display: block;
+    }
+    .say-header--main>.say-list {
+        height: 120px;
+    }
+    .say-header--complex>.say-list{
+        padding-inline-start: 0;
+    }
+
+    .hom {
+        display: none;
+    }
+}

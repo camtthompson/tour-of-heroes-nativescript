@@ -1,0 +1,56 @@
+<div *ngIf="hero" class="container">
+    <h2>{{hero.name}} Details</h2>
+    <div><label>id: </label>{{hero.id}}</div>
+    <div class="form-group">
+        <label>Hero Name: </label>
+        <br />
+        <input [(ngModel)]="hero.name" placeholder="Hero Name" [className]="editMode ? 'enabled-input' : 'disabled-input'">
+    </div>
+    <div class="form-group">
+        <label>Email: </label>
+        <br />
+        <input placeholder="Email Address" [className]="editMode ? 'enabled-input' : 'disabled-input'">
+    </div>
+    <div class="form-group">
+        <label>SideKick: </label>
+        <br />
+        <input placeholder="Sidekick" [className]="editMode ? 'enabled-input' : 'disabled-input'">
+    </div>
+    <br />
+    <div>
+        <span>Some Response from API:</span>{{ hero.apiResponseValue }}
+    </div>
+    <button (click)="save()">save</button>
+    <button (click)="toggleEditMode()">edit</button>
+    <button (click)="toggleOpen()">toggle open</button>
+
+    <a href="../assets/say-id-card.pdf">Get PDF</a>
+
+    <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
+        <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+    </div>
+    <br />
+    <br />
+    <div class="say-toggle-bar">
+            <input id="a" class="say-toggle__item" type="checkbox" />
+        <label for="a" class="say-toggle__label">
+            <span class="say-toggle__text--default">text</span>
+            <span class="say-toggle__text--loading">api</span>
+            <span class="say-toggle__text--temp">saved</span>
+        </label>
+
+        <input id="b" class="say-toggle__item" type="checkbox" />
+        <label for="b" class="say-toggle__label">
+            <span class="say-toggle__text--default">email</span>
+            <span class="say-toggle__text--loading">api</span>
+            <span class="say-toggle__text--temp">saved</span>
+        </label>
+
+        <input id="c" class="say-toggle__item" type="checkbox" />
+        <label for="c" class="say-toggle__label">
+            <span class="say-toggle__text--default">none</span>
+            <span class="say-toggle__text--loading">api</span>
+            <span class="say-toggle__text--temp">saved</span>
+        </label>
+    </div>
+</div>
