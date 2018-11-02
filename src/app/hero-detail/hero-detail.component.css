@@ -59,7 +59,7 @@ button {
 }
 
 .say-toggle__label:hover {
-    background-color: magenta;
+    background-color: #B0008E;
     color: white;
     cursor: pointer;
 }
@@ -69,7 +69,7 @@ button {
 }
 
 .say-toggle__item:checked+.say-toggle__label {
-    background-color: magenta;
+    background-color: #B0008E;
     color: white;
 }
 

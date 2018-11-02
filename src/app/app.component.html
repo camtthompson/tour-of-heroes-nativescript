@@ -1,27 +1,30 @@
 <header>
     <nav>
         <div class="say-header say-header--main">
-            <ul class="say-list">
-                <li class="say-list-item say-list-item--logo"><a routerLink="/"> <img class="hom" src="../assets/images/main-logo.png" alt="logo - home" /><img class="som" src="../assets/images/say-logo-banner.png"/> </a></li>
-                <li class="say-list-item say-list-item--right"> <a routerLink="/dashboard">my dash</a> </li>
-                <li class="say-list-item"> <a routerLink="/dashboard">sign in</a> </li>
-            </ul>
+            <div class="say-list">
+                <div class="say-list-item say-list-item--logo"><a routerLink="/"> <img src="../assets/images/logo.svg" alt="logo - home" /></a></div>
+                <div class="say-list-item say-list-item--right"> <a routerLink="/dashboard" class="underline-link">sign in</a> </div>
+                <div class="say-list-item"> <a routerLink="/dashboard" class="underline-link">sign out</a> </div>
+            </div>
+        </div>
+        <div class="say-header say-header--hidden">
+            <div class="say-list">
+                <div class="say-list-navigator left"><</div>
+                <div class="say-list-item"><a routerLink="/heroes" class="underline-link"><span>my heroes</span></a></div>
+                <div class="say-list-item"> <a routerLink="/dashboard" class="underline-link"><span>my dash</span></a> </div>
+                <div class="say-list-item"> <a routerLink="/dashboard" class="underline-link"><span>my link</span></a> </div>
+                <div class="say-list-navigator right">></div>
+            </div>
         </div>
         <div class="say-header say-header--complex">
-            <ul class="say-list">
-                <li class="say-list-item"><a routerLink="/heroes">my heroes</a></li>
-                <li class="say-list-item"> <a routerLink="/dashboard">my dash</a> </li>
-                <li class="say-list-item"> <a routerLink="/dashboard">my link</a> </li>
-                <li class="say-list-item"> <a routerLink="/dashboard">another link</a> </li>
-            </ul>
-        </div>
-        <div class="say-sub-header">
-            <ul class="say-list">
-                <li class="say-list-item"><a routerLink="/heroes">my heroes</a></li>
-                <li class="say-list-item"> <a routerLink="/dashboard">my dash</a> </li>
-                <li class="say-list-item"> <a routerLink="/dashboard">my link</a> </li>
-                <li class="say-list-item"> <a routerLink="/dashboard">another link</a> </li>
-            </ul>
+            <div class="say-list">
+                <div class="say-list-navigator left"><</div>
+                <div class="say-list-item"><a routerLink="/heroes" class="underline-link"><span>my heroes</span></a></div>
+                <div class="say-list-item"> <a routerLink="/dashboard" class="underline-link"><span>my dash</span></a> </div>
+                <div class="say-list-item"> <a routerLink="/dashboard" class="underline-link"><span>my link</span></a> </div>
+                <div class="say-list-item"> <a routerLink="/dashboard" class="underline-link"><span>another link</span></a> </div>
+                <div class="say-list-navigator right">></div>
+            </div>
         </div>
     </nav>
 </header>

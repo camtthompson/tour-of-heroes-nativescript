@@ -1,5 +1,9 @@
+header{     border-bottom: 3px solid #B0008e;
+}
+
+
 .say-header {
-    background-color: magenta;
+    background-color: white;
 }
 
 .say-list {
@@ -8,6 +12,31 @@
     list-style-type: none;
     padding-inline-start: 0;
     padding-inline-start: 225px;
+    display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.say-list-navigator {
+    position: fixed;
+    display: none;
+}
+
+.say-list-navigator.right { 
+    right: 0;
+    background-image: linear-gradient(90deg, transparent, white 30px);
+    padding: 15px 10px 15px 30px;
+}
+
+.say-list-navigator.left {
+    left: 0;
+    background-image: linear-gradient(270deg, transparent, white 30px);
+    padding: 15px 30px 15px 10px;
+}
+
+.say-list-navigator.show { 
+    display: block;
 }
 
 .say-header--main>.say-list {
@@ -15,18 +44,15 @@
     padding-left: 0;
 }
 
-.say-list-item {
-    padding: 15px;
-}
-
 .say-list-item--right {
     margin-left: auto;
 }
 
 .say-list-item--logo {
-    top: -20px;
-    left: -25px;
     position: relative;
+    height: 30px;
+    width: 200px;
+    margin: 10px;
 }
 
 .say-sub-header {
@@ -34,7 +60,32 @@
 }
 
 a {
-    color: white;
+    color: grey;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.underline-link{ 
+    display: inline-block;
+    padding: 15px;
+}
+
+.underline-link span {
+    display: inline-block;
+}
+
+
+.underline-link span::after {
+    background: grey;
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    transition: width 125ms ease-out;
+}
+
+.underline-link:hover span::after {
+    width: 100%;
 }
 
 .som{
@@ -46,10 +97,15 @@ a {
         display: block;
     }
     .say-header--main>.say-list {
-        height: 120px;
+        height: 80px;
     }
     .say-header--complex>.say-list{
         padding-inline-start: 0;
+        border-top: 1px solid lightgrey;
+    }
+    .say-header--hidden > .say-list {
+        padding-inline-start: 0;
+        border-top: 1px solid lightgrey;
     }
 
     .hom {
